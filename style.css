@@ -1,0 +1,123 @@
+/* Rouage — public pages. System fonts only: no third-party requests. */
+:root {
+  --paper: #F3F0E8;
+  --surface: #FBFAF6;
+  --ink: #14130F;
+  --ink-2: #6E6A60;
+  --ink-3: #A6A196;
+  --hairline: #DEDACF;
+  --signal: #F2542D;
+  --serif: ui-serif, "New York", "Iowan Old Style", Georgia, serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0E0D0B;
+    --surface: #1A1916;
+    --ink: #F1EDE4;
+    --ink-2: #9B968A;
+    --ink-3: #625E56;
+    --hairline: #2C2A26;
+    --signal: #FF6B3D;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.6 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 20px 64px;
+}
+
+header.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 48px;
+}
+
+header.brand a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  font: 600 22px var(--serif);
+}
+
+.mark { width: 26px; height: 26px; }
+.mark .ring { stroke: var(--ink); }
+.mark .dot { fill: var(--signal); }
+
+.kicker {
+  font: 500 12px var(--mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+h1 {
+  font: 400 clamp(38px, 8vw, 54px)/1.08 var(--serif);
+  margin: 10px 0 18px;
+}
+
+h1 em { color: var(--signal); }
+
+h2 {
+  font: 400 26px/1.25 var(--serif);
+  margin: 44px 0 10px;
+}
+
+h3 {
+  font: 600 18px/1.35 var(--sans);
+  margin: 26px 0 6px;
+}
+
+p, li { color: var(--ink-2); }
+strong { color: var(--ink); font-weight: 600; }
+
+a { color: var(--ink); text-decoration-color: var(--signal); text-underline-offset: 3px; }
+
+.lead { font-size: 19px; }
+
+.card {
+  background: var(--surface);
+  border-radius: 22px;
+  padding: 6px 22px;
+  margin: 20px 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+.card dl { margin: 0; }
+.card .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--hairline);
+}
+.card .row:last-child { border-bottom: 0; }
+.card dt { font: 500 12px/1.6 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-2); }
+.card dd { margin: 0; text-align: right; color: var(--ink); }
+
+footer {
+  margin-top: 64px;
+  padding-top: 20px;
+  border-top: 1px solid var(--hairline);
+  font: 500 12px/1.8 var(--mono);
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+}
+
+footer a { color: var(--ink-2); }
